@@ -20,7 +20,7 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-aurora pt-32 sm:pt-36 lg:pt-40">
       {/* decorative soft blobs */}
       <div className="pointer-events-none absolute -left-24 top-40 h-72 w-72 rounded-full bg-brand-300/30 blur-3xl" />
-      <div className="pointer-events-none absolute right-0 top-10 h-80 w-80 rounded-full bg-indigo-300/25 blur-3xl" />
+      <div className="pointer-events-none absolute right-0 top-10 h-80 w-80 rounded-full bg-accent-300/25 blur-3xl" />
 
       <Container className="relative">
         <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-6">
@@ -58,7 +58,12 @@ export default function Hero() {
             {/* social proof */}
             <motion.div variants={item} className="mt-10 flex items-center gap-4">
               <div className="flex -space-x-3">
-                {["#2563eb", "#6366f1", "#0ea5e9", "#8b5cf6"].map((c, i) => (
+                {[
+                  "var(--color-brand-600)",
+                  "var(--color-accent-500)",
+                  "var(--color-brand-400)",
+                  "var(--color-accent-400)",
+                ].map((c, i) => (
                   <span
                     key={i}
                     className="grid h-10 w-10 place-items-center rounded-full border-2 border-white text-xs font-bold text-white shadow-sm"
@@ -69,7 +74,7 @@ export default function Hero() {
                 ))}
               </div>
               <div className="text-sm">
-                <div className="flex items-center gap-1 text-amber-500">
+                <div className="flex items-center gap-1 text-warning-500">
                   {"★★★★★"}
                   <span className="ml-1 font-bold text-ink">4.9/5</span>
                 </div>

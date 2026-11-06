@@ -1,26 +1,20 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo/Logo.png";
+import logo from "../../assets/logo/logo-nav.png";
 
-export default function Logo({ onClick }) {
+// Logo-only lockup (transparent PNG already includes the wordmark).
+export default function Logo({ onClick, className = "h-10 sm:h-12" }) {
   return (
     <Link
       to="/"
       onClick={onClick}
-      className="flex items-center gap-3"
+      className="flex items-center"
       aria-label="Rubsal Technologies — home"
     >
       <img
         src={logo}
         alt="Rubsal Technologies"
-        className="h-9 w-9 object-contain sm:h-10 sm:w-10"
+        className={`${className} w-auto object-contain`}
       />
-      <span className="hidden h-8 w-px bg-slate-200 sm:block" />
-      <span className="hidden flex-col leading-none sm:flex">
-        <span className="font-display text-lg font-bold text-ink">Rubsal</span>
-        <span className="text-[0.72rem] font-medium tracking-wide text-slate">
-          Technologies
-        </span>
-      </span>
     </Link>
   );
 }

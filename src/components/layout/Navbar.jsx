@@ -110,9 +110,11 @@ export default function Navbar() {
           </ul>
 
           <div className="flex items-center gap-2">
-            <Button to="/contact" icon="arrow" className="hidden sm:inline-flex">
-              Let's Talk
-            </Button>
+            <div className="hidden lg:block">
+              <Button to="/contact" icon="arrow" className="whitespace-nowrap">
+                Let's Talk
+              </Button>
+            </div>
 
             {/* Mobile toggle */}
             <button

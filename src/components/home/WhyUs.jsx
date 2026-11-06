@@ -20,7 +20,7 @@ export default function WhyUs() {
         <div className="mt-14 grid gap-5 lg:grid-cols-3">
           {/* Big feature card */}
           <Reveal className="lg:col-span-2">
-            <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-3xl bg-gradient-to-br from-brand-600 to-indigo-700 p-9 text-white">
+            <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-3xl bg-gradient-to-br from-brand-600 to-accent-700 p-9 text-white">
               <div className="pointer-events-none absolute -right-10 -top-10 h-56 w-56 rounded-full bg-white/10 blur-2xl" />
               <div className="pointer-events-none absolute right-6 top-6 opacity-20">
                 <Icon name="spark" size={120} strokeWidth={1} />

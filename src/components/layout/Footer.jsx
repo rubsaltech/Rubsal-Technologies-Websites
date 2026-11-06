@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Container from "../ui/Container";
 import Icon from "../ui/Icon";
-import logo from "../../assets/logo/Logo.png";
+import logo from "../../assets/logo/logo-nav.png";
 import { company } from "../../data/site";
 
 const columns = [
@@ -31,13 +31,13 @@ export default function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3">
-              <img src={logo} alt="" className="h-10 w-10 object-contain" />
-              <div className="leading-none">
-                <p className="font-display text-lg font-bold text-ink">Rubsal</p>
-                <p className="text-xs text-slate">Technologies</p>
-              </div>
-            </div>
+            <Link to="/" aria-label="Rubsal Technologies — home" className="inline-flex">
+              <img
+                src={logo}
+                alt="Rubsal Technologies"
+                className="h-11 w-auto object-contain sm:h-12"
+              />
+            </Link>
             <p className="mt-5 max-w-xs text-[0.95rem] leading-relaxed text-slate">
               We turn ideas into smart digital products — from custom software to
               AI that helps your business grow.

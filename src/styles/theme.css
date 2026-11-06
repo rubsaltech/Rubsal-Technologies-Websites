@@ -1,0 +1,88 @@
+/* ==========================================================================
+   RUBSAL — THEME / SINGLE SOURCE OF TRUTH FOR COLOUR
+   --------------------------------------------------------------------------
+   Every colour used anywhere in the site is defined here as a token.
+   To re-theme the whole website, edit the values in this file only —
+   nothing else needs to change. Components never hardcode a colour; they
+   use token-based classes (bg-brand-600, text-accent-500, border-line, …)
+   or the gradient variables declared in index.css.
+
+   Token groups:
+     • brand    → primary identity colour (currently electric blue)
+     • accent   → secondary colour used in gradients (currently indigo)
+     • neutrals → ink / body / muted text, lines, surfaces
+     • status   → success / warning (badges, ratings)
+   ========================================================================== */
+
+@theme {
+  /* ---- Typography ------------------------------------------------------ */
+  --font-display: "Sora", "Segoe UI", system-ui, sans-serif;
+  --font-sans: "Inter", "Segoe UI", system-ui, sans-serif;
+
+  /* ---- PRIMARY · Brand (electric blue) --------------------------------- */
+  --color-brand-50: #eff5ff;
+  --color-brand-100: #dbe8fe;
+  --color-brand-200: #bfd6fe;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-800: #1e40af;
+  --color-brand-900: #1e3a8a;
+
+  /* ---- SECONDARY · Accent (indigo / violet) ---------------------------- */
+  --color-accent-50: #eef2ff;
+  --color-accent-100: #e0e7ff;
+  --color-accent-200: #c7d2fe;
+  --color-accent-300: #a5b4fc;
+  --color-accent-400: #818cf8;
+  --color-accent-500: #6366f1;
+  --color-accent-600: #4f46e5;
+  --color-accent-700: #4338ca;
+
+  /* ---- NEUTRALS (semantic names) --------------------------------------- */
+  --color-ink: #0f172a;        /* headings / strongest text */
+  --color-slate: #475569;      /* default body text         */
+  --color-mist: #64748b;       /* captions / secondary text */
+  --color-muted: #94a3b8;      /* faint labels / icons      */
+  --color-line: #e2e8f0;       /* borders & dividers        */
+  --color-line-soft: #eef2f7;  /* very light dividers       */
+  --color-surface: #ffffff;    /* cards / solid surfaces    */
+  --color-surface-soft: #f6f9ff; /* tinted page background   */
+  --color-surface-mute: #f1f5f9; /* subtle fills / tracks    */
+
+  /* ---- NEUTRAL RAMP ----------------------------------------------------
+     Overrides Tailwind's built-in white + slate scale, so the plain
+     `bg-white`, `border-slate-200`, `text-slate-400`, … classes already
+     in the markup also read their colour from THIS file. Change these to
+     re-tone the whole UI's neutrals (e.g. to a warm or cool gray).
+     --------------------------------------------------------------------- */
+  --color-white: #ffffff;
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+
+  /* ---- STATUS ---------------------------------------------------------- */
+  --color-success-50: #ecfdf5;
+  --color-success-200: #a7f3d0;
+  --color-success-600: #059669;
+  --color-success-700: #047857;
+
+  --color-warning-50: #fffbeb;
+  --color-warning-200: #fde68a;
+  --color-warning-500: #f59e0b;  /* star ratings */
+  --color-warning-700: #b45309;
+
+  /* ---- Elevation (shadows) -------------------------------------------- */
+  --shadow-glow: 0 24px 60px -18px rgba(37, 99, 235, 0.45);
+  --shadow-soft: 0 18px 40px -20px rgba(15, 23, 42, 0.18);
+  --shadow-card: 0 10px 30px -12px rgba(15, 23, 42, 0.12);
+}

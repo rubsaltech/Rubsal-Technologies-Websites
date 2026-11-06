@@ -24,7 +24,7 @@ export default function GlassOrb({ className = "" }) {
         className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[78%] w-[78%] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"
         style={{
           background:
-            "radial-gradient(circle, rgba(59,130,246,0.45) 0%, rgba(129,140,248,0.25) 45%, transparent 70%)",
+            "radial-gradient(circle, color-mix(in srgb, var(--color-brand-500) 45%, transparent) 0%, color-mix(in srgb, var(--color-accent-400) 25%, transparent) 45%, transparent 70%)",
         }}
       />
 
@@ -35,16 +35,16 @@ export default function GlassOrb({ className = "" }) {
       >
         <defs>
           <linearGradient id="glassA" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#dbeafe" />
-            <stop offset="35%" stopColor="#60a5fa" />
-            <stop offset="75%" stopColor="#2563eb" />
-            <stop offset="100%" stopColor="#1e3a8a" />
+            <stop offset="0%" stopColor="var(--color-brand-100)" />
+            <stop offset="35%" stopColor="var(--color-brand-400)" />
+            <stop offset="75%" stopColor="var(--color-brand-600)" />
+            <stop offset="100%" stopColor="var(--color-brand-900)" />
           </linearGradient>
           <linearGradient id="glassB" x1="1" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#c7d2fe" />
-            <stop offset="40%" stopColor="#6366f1" />
-            <stop offset="80%" stopColor="#2563eb" />
-            <stop offset="100%" stopColor="#1e40af" />
+            <stop offset="0%" stopColor="var(--color-accent-200)" />
+            <stop offset="40%" stopColor="var(--color-accent-500)" />
+            <stop offset="80%" stopColor="var(--color-brand-600)" />
+            <stop offset="100%" stopColor="var(--color-brand-800)" />
           </linearGradient>
           <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#ffffff" stopOpacity="0.95" />
@@ -52,8 +52,8 @@ export default function GlassOrb({ className = "" }) {
           </linearGradient>
           <radialGradient id="bubble" cx="35%" cy="30%" r="70%">
             <stop offset="0%" stopColor="#ffffff" stopOpacity="0.95" />
-            <stop offset="35%" stopColor="#bfdbfe" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.15" />
+            <stop offset="35%" stopColor="var(--color-brand-200)" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="var(--color-brand-500)" stopOpacity="0.15" />
           </radialGradient>
           <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
             <feGaussianBlur stdDeviation="7" />
@@ -61,7 +61,7 @@ export default function GlassOrb({ className = "" }) {
         </defs>
 
         {/* Soft contact shadow */}
-        <ellipse cx="270" cy="430" rx="150" ry="26" fill="#1e3a8a" opacity="0.14" filter="url(#soft)" />
+        <ellipse cx="270" cy="430" rx="150" ry="26" fill="var(--color-brand-900)" opacity="0.14" filter="url(#soft)" />
 
         {/* Orbital ring (slow spin) */}
         <motion.ellipse
@@ -70,7 +70,7 @@ export default function GlassOrb({ className = "" }) {
           rx="210"
           ry="96"
           fill="none"
-          stroke="#93c5fd"
+          stroke="var(--color-brand-300)"
           strokeWidth="2"
           strokeOpacity="0.7"
           transform="rotate(-24 260 260)"
@@ -83,7 +83,7 @@ export default function GlassOrb({ className = "" }) {
         <g transform="rotate(-18 260 260)">
           <ellipse cx="260" cy="260" rx="150" ry="150" fill="none" stroke="url(#glassA)" strokeWidth="56" strokeLinecap="round" opacity="0.92" />
           {/* inner depth edge */}
-          <ellipse cx="260" cy="260" rx="150" ry="150" fill="none" stroke="#1e3a8a" strokeWidth="56" strokeDasharray="60 880" strokeDashoffset="430" opacity="0.25" />
+          <ellipse cx="260" cy="260" rx="150" ry="150" fill="none" stroke="var(--color-brand-900)" strokeWidth="56" strokeDasharray="60 880" strokeDashoffset="430" opacity="0.25" />
           {/* glossy top highlight */}
           <path d="M150 196 a150 150 0 0 1 210 -20" fill="none" stroke="url(#sheen)" strokeWidth="14" strokeLinecap="round" opacity="0.9" />
         </g>

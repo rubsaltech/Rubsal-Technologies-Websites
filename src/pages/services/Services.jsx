@@ -13,13 +13,13 @@ const groupMeta = [
     key: "ai-data",
     to: "/services/ai-data",
     icon: "brain",
-    color: "from-brand-500 to-indigo-600",
+    color: "from-brand-500 to-accent-600",
   },
   {
     key: "software-development",
     to: "/services/software-development",
     icon: "code",
-    color: "from-sky-500 to-brand-700",
+    color: "from-brand-400 to-brand-700",
   },
 ];
 

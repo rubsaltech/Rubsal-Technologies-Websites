@@ -142,8 +142,8 @@ export default function About() {
             {team.map((m, i) => (
               <Reveal key={m.name} delay={(i % 4) * 0.08}>
                 <div className="group overflow-hidden rounded-3xl border border-slate-200/70 bg-white text-center shadow-[0_12px_30px_-24px_rgba(15,23,42,0.3)]">
-                  <div className="relative flex h-44 items-center justify-center bg-gradient-to-br from-brand-100 to-indigo-100">
-                    <span className="grid h-24 w-24 place-items-center rounded-full bg-gradient-to-br from-brand-500 to-indigo-600 font-display text-4xl font-bold text-white shadow-lg transition-transform duration-300 group-hover:scale-105">
+                  <div className="relative flex h-44 items-center justify-center bg-gradient-to-br from-brand-100 to-accent-100">
+                    <span className="grid h-24 w-24 place-items-center rounded-full bg-gradient-to-br from-brand-500 to-accent-600 font-display text-4xl font-bold text-white shadow-lg transition-transform duration-300 group-hover:scale-105">
                       {m.initial}
                     </span>
                   </div>

@@ -9,7 +9,7 @@ export default function PageHero({ eyebrow, title, subtitle, crumbs = [], icon =
   return (
     <section className="relative overflow-hidden bg-aurora pb-16 pt-32 sm:pt-40">
       <div className="pointer-events-none absolute -right-20 top-10 h-72 w-72 rounded-full bg-brand-300/30 blur-3xl" />
-      <div className="pointer-events-none absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-indigo-300/20 blur-3xl" />
+      <div className="pointer-events-none absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-accent-300/20 blur-3xl" />
       <Container className="relative">
         {crumbs.length > 0 && (
           <nav className="mb-6 flex items-center gap-2 text-sm text-slate">

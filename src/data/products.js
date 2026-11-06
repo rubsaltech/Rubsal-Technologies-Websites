@@ -9,7 +9,7 @@ export const products = [
       "A no-code workflow builder that connects your tools and runs repetitive tasks on autopilot.",
     features: ["Drag-and-drop flows", "200+ integrations", "Smart scheduling"],
     status: "Live",
-    accent: "from-brand-500 to-brand-700",
+    accent: "from-brand-500 to-brand-800",
   },
   {
     name: "InsightBoard",
@@ -19,7 +19,7 @@ export const products = [
       "Real-time dashboards that pull data from everywhere and explain what it means in plain language.",
     features: ["Live KPIs", "Plain-English reports", "Share with one click"],
     status: "Live",
-    accent: "from-sky-400 to-brand-600",
+    accent: "from-brand-400 to-brand-600",
   },
   {
     name: "Ada Assistant",
@@ -29,7 +29,7 @@ export const products = [
       "An AI assistant trained on your content to answer customer and staff questions 24/7.",
     features: ["Chat & voice", "Learns your docs", "Handover to humans"],
     status: "Live",
-    accent: "from-indigo-400 to-brand-600",
+    accent: "from-accent-400 to-brand-600",
   },
   {
     name: "VaultDB",
@@ -39,7 +39,7 @@ export const products = [
       "Managed, secure cloud storage with instant search and automatic backups — zero maintenance.",
     features: ["Encrypted at rest", "Instant search", "Daily backups"],
     status: "Beta",
-    accent: "from-cyan-400 to-blue-600",
+    accent: "from-brand-400 to-accent-600",
   },
   {
     name: "Pulse Forecast",
@@ -49,7 +49,7 @@ export const products = [
       "Predictive models that forecast demand, revenue and risk so you can plan with confidence.",
     features: ["Demand forecasting", "Risk alerts", "What-if scenarios"],
     status: "Beta",
-    accent: "from-violet-400 to-brand-600",
+    accent: "from-accent-400 to-brand-600",
   },
   {
     name: "LaunchKit",
@@ -59,6 +59,6 @@ export const products = [
       "A ready-made starter platform that gets your web product online in weeks, not months.",
     features: ["Auth & payments", "Admin panel", "Scales with you"],
     status: "Coming soon",
-    accent: "from-blue-400 to-indigo-600",
+    accent: "from-brand-400 to-accent-600",
   },
 ];

@@ -1,5 +1,4 @@
 import Hero from "../../components/home/Hero";
-import LogoStrip from "../../components/home/LogoStrip";
 import ServicesOverview from "../../components/home/ServicesOverview";
 import WhyUs from "../../components/home/WhyUs";
 import Process from "../../components/home/Process";
@@ -12,7 +11,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <LogoStrip />
       <ServicesOverview />
       <WhyUs />
       <Process />

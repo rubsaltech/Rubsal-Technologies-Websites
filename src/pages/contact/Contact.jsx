@@ -81,7 +81,7 @@ export default function Contact() {
                 );
               })}
 
-              <div className="relative mt-1 overflow-hidden rounded-3xl bg-gradient-to-br from-brand-600 to-indigo-700 p-7 text-white">
+              <div className="relative mt-1 overflow-hidden rounded-3xl bg-gradient-to-br from-brand-600 to-accent-700 p-7 text-white">
                 <div className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
                 <Icon name="clock" size={26} />
                 <h3 className="mt-4 text-lg font-bold">Fast, friendly replies</h3>
@@ -97,7 +97,7 @@ export default function Contact() {
               <div className="rounded-3xl border border-slate-200/70 bg-white p-7 shadow-[0_20px_50px_-30px_rgba(15,23,42,0.4)] sm:p-9">
                 {sent ? (
                   <div className="flex flex-col items-center py-12 text-center">
-                    <span className="grid h-16 w-16 place-items-center rounded-full bg-emerald-50 text-emerald-600">
+                    <span className="grid h-16 w-16 place-items-center rounded-full bg-success-50 text-success-600">
                       <Icon name="check" size={32} />
                     </span>
                     <h3 className="mt-6 text-2xl font-bold text-ink">

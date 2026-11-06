@@ -11,10 +11,10 @@ export default function CTABand({
     <section className="pb-4 pt-8">
       <Container>
         <Reveal>
-          <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-700 via-brand-600 to-indigo-700 px-7 py-14 text-center text-white sm:px-14 sm:py-16">
+          <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-700 via-brand-600 to-accent-700 px-7 py-14 text-center text-white sm:px-14 sm:py-16">
             {/* glow + grid texture */}
             <div className="pointer-events-none absolute -left-16 -top-16 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-20 -right-10 h-72 w-72 rounded-full bg-indigo-400/20 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-20 -right-10 h-72 w-72 rounded-full bg-accent-400/20 blur-3xl" />
             <div className="bg-dotgrid pointer-events-none absolute inset-0 opacity-[0.12]" />
 
             <div className="relative mx-auto max-w-2xl">

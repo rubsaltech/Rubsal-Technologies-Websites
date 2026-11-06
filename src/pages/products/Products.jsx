@@ -9,9 +9,9 @@ import usePageTitle from "../../hooks/usePageTitle";
 import { products } from "../../data/products";
 
 const statusStyle = {
-  Live: "bg-emerald-50 text-emerald-700 border-emerald-200",
-  Beta: "bg-amber-50 text-amber-700 border-amber-200",
-  "Coming soon": "bg-slate-100 text-slate-600 border-slate-200",
+  Live: "bg-success-50 text-success-700 border-success-200",
+  Beta: "bg-warning-50 text-warning-700 border-warning-200",
+  "Coming soon": "bg-surface-mute text-mist border-line",
 };
 
 export default function Products() {
