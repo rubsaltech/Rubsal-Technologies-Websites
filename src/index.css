@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+/* Fonts (Sora + Inter) are loaded via <link> in index.html. */
+
+/* ------------------------------------------------------------------ */
+/*  Design tokens (Tailwind v4 theme)                                 */
+/* ------------------------------------------------------------------ */
+@theme {
+  --font-display: "Sora", "Segoe UI", system-ui, sans-serif;
+  --font-sans: "Inter", "Segoe UI", system-ui, sans-serif;
+
+  /* Brand – electric blue scale */
+  --color-brand-50: #eff5ff;
+  --color-brand-100: #dbe8fe;
+  --color-brand-200: #bfd6fe;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-800: #1e40af;
+  --color-brand-900: #1e3a8a;
+
+  /* Neutrals */
+  --color-ink: #0f172a;
+  --color-slate: #475569;
+  --color-mist: #64748b;
+
+  /* Accent lavender used in gradients */
+  --color-lavender: #c7d2fe;
+  --color-lavender-soft: #e0e7ff;
+
+  --shadow-glow: 0 24px 60px -18px rgba(37, 99, 235, 0.45);
+  --shadow-soft: 0 18px 40px -20px rgba(15, 23, 42, 0.18);
+  --shadow-card: 0 10px 30px -12px rgba(15, 23, 42, 0.12);
+
+  --radius-xl2: 1.75rem;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Base                                                              */
+/* ------------------------------------------------------------------ */
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+::selection {
+  background: var(--color-brand-600);
+  color: #fff;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+  border: 3px solid #f1f5f9;
+}
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* ------------------------------------------------------------------ */
+/*  Reusable utilities                                                */
+/* ------------------------------------------------------------------ */
+
+/* Page-wide soft blue → lavender wash */
+.bg-aurora {
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(147, 197, 253, 0.55), transparent 60%),
+    radial-gradient(900px 500px at 0% 15%, rgba(199, 210, 254, 0.5), transparent 55%),
+    linear-gradient(180deg, #f6f9ff 0%, #ffffff 45%);
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, #2563eb 0%, #60a5fa 55%, #818cf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Frosted glass surface */
+.glass {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: var(--shadow-card);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+/* Faint dotted grid texture for section backgrounds */
+.bg-dotgrid {
+  background-image: radial-gradient(rgba(37, 99, 235, 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Thin gradient hairline divider */
+.hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.25), transparent);
+}
+
+/* Focus ring for a11y */
+:where(a, button):focus-visible {
+  outline: 2px solid var(--color-brand-600);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
