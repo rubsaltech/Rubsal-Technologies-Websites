@@ -5,12 +5,22 @@ import Reveal from "../../components/ui/Reveal";
 import Button from "../../components/ui/Button";
 import Icon from "../../components/ui/Icon";
 import usePageTitle from "../../hooks/usePageTitle";
-import { company } from "../../data/site";
+import { contact, socials } from "../../data/contact";
 
 const contactInfo = [
-  { icon: "mail", label: "Email us", value: company.email, href: `mailto:${company.email}` },
-  { icon: "phone", label: "Call us", value: company.phone, href: `tel:${company.phone}` },
-  { icon: "pin", label: "Visit us", value: company.address },
+  { icon: "mail", label: "Email us", value: contact.email, href: `mailto:${contact.email}` },
+  {
+    icon: "phone",
+    label: "Call us",
+    value: contact.phone,
+    href: `tel:${contact.phone.replace(/[^+\d]/g, "")}`,
+  },
+  {
+    icon: "pin",
+    label: "Visit us",
+    value: contact.location.label,
+    href: contact.location.mapUrl,
+  },
 ];
 
 const services = [
@@ -89,6 +99,27 @@ export default function Contact() {
                   Every message reaches a real person on our team. We typically
                   respond within a few hours during the working week.
                 </p>
+                <p className="mt-4 text-sm font-semibold text-white">{contact.hours}</p>
+              </div>
+
+              {/* Social links */}
+              <div className="rounded-3xl border border-line bg-white/70 p-6 backdrop-blur">
+                <p className="text-sm font-semibold text-ink">Follow us</p>
+                <div className="mt-3 flex flex-wrap gap-2.5">
+                  {socials.map((s) => (
+                    <a
+                      key={s.label}
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={s.label}
+                      title={s.label}
+                      className="grid h-10 w-10 place-items-center rounded-full border border-line bg-white text-slate transition-all hover:-translate-y-0.5 hover:border-brand-300 hover:bg-brand-50 hover:text-brand-600"
+                    >
+                      <Icon name={s.icon} size={18} />
+                    </a>
+                  ))}
+                </div>
               </div>
             </Reveal>
 

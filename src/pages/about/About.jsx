@@ -1,3 +1,4 @@
+import { useState } from "react";
 import PageHero from "../../components/ui/PageHero";
 import Container from "../../components/ui/Container";
 import Reveal from "../../components/ui/Reveal";
@@ -5,6 +6,7 @@ import Icon from "../../components/ui/Icon";
 import CTABand from "../../components/ui/CTABand";
 import usePageTitle from "../../hooks/usePageTitle";
 import { stats } from "../../data/site";
+import { team } from "../../data/contact";
 
 const values = [
   {
@@ -29,12 +31,61 @@ const values = [
   },
 ];
 
-const team = [
-  { name: "Sahir Malik", role: "Founder & Lead Engineer", initial: "S" },
-  { name: "Lena Brooks", role: "Head of Design", initial: "L" },
-  { name: "Omar Raza", role: "AI & Data Lead", initial: "O" },
-  { name: "Mia Costa", role: "Product Manager", initial: "M" },
-];
+// Single team member card — photo from contact.js with initials fallback.
+function TeamMember({ m, delay }) {
+  const [imgOk, setImgOk] = useState(Boolean(m.image));
+  return (
+    <Reveal delay={delay}>
+      <div className="group overflow-hidden rounded-3xl border border-line bg-white text-center shadow-[0_12px_30px_-24px_rgba(15,23,42,0.3)]">
+        <div className="relative flex h-52 items-center justify-center overflow-hidden bg-gradient-to-br from-brand-100 to-accent-100">
+          {imgOk ? (
+            <img
+              src={m.image}
+              alt={m.name}
+              loading="lazy"
+              onError={() => setImgOk(false)}
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          ) : (
+            <span className="grid h-24 w-24 place-items-center rounded-full bg-gradient-to-br from-brand-500 to-accent-600 font-display text-4xl font-bold text-white shadow-lg transition-transform duration-300 group-hover:scale-105">
+              {m.initial}
+            </span>
+          )}
+
+          {/* Socials reveal on hover */}
+          {m.socials && (
+            <div className="absolute inset-x-0 bottom-0 flex justify-center gap-2 bg-gradient-to-t from-ink/70 to-transparent p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              {Object.entries(m.socials).map(([platform, href]) => (
+                <a
+                  key={platform}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${m.name} on ${platform}`}
+                  className="grid h-8 w-8 place-items-center rounded-full bg-white/90 text-ink transition-colors hover:bg-white hover:text-brand-600"
+                >
+                  <Icon name={platform} size={15} />
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <div className="p-6">
+          <h3 className="text-lg font-bold text-ink">{m.name}</h3>
+          <p className="mt-1 text-sm text-slate">{m.role}</p>
+          <a
+            href={`mailto:${m.email}`}
+            className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800"
+          >
+            <Icon name="mail" size={14} />
+            {m.email}
+          </a>
+        </div>
+      </div>
+    </Reveal>
+  );
+}
 
 export default function About() {
   usePageTitle("About Us — Rubsal Technologies");
@@ -140,19 +191,7 @@ export default function About() {
           </Reveal>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {team.map((m, i) => (
-              <Reveal key={m.name} delay={(i % 4) * 0.08}>
-                <div className="group overflow-hidden rounded-3xl border border-slate-200/70 bg-white text-center shadow-[0_12px_30px_-24px_rgba(15,23,42,0.3)]">
-                  <div className="relative flex h-44 items-center justify-center bg-gradient-to-br from-brand-100 to-accent-100">
-                    <span className="grid h-24 w-24 place-items-center rounded-full bg-gradient-to-br from-brand-500 to-accent-600 font-display text-4xl font-bold text-white shadow-lg transition-transform duration-300 group-hover:scale-105">
-                      {m.initial}
-                    </span>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-ink">{m.name}</h3>
-                    <p className="mt-1 text-sm text-slate">{m.role}</p>
-                  </div>
-                </div>
-              </Reveal>
+              <TeamMember key={m.name} m={m} delay={(i % 4) * 0.08} />
             ))}
           </div>
         </Container>

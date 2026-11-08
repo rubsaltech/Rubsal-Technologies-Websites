@@ -1,18 +1,5 @@
 // Central place for site-wide copy & config.
-
-export const company = {
-  name: "Rubsal Technologies",
-  tagline: "Turning Ideas Into Smart Digital Solutions.",
-  email: "hello@rubsal.tech",
-  phone: "+1 (555) 027-8841",
-  address: "Innovation Drive, Suite 400, Austin, TX",
-  socials: [
-    { label: "LinkedIn", href: "#" },
-    { label: "X / Twitter", href: "#" },
-    { label: "GitHub", href: "#" },
-    { label: "Dribbble", href: "#" },
-  ],
-};
+// NOTE: Contact details, social links and team data live in ./contact.js
 
 // Primary navigation. `children` renders a dropdown.
 export const navLinks = [

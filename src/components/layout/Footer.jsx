@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Container from "../ui/Container";
 import Icon from "../ui/Icon";
 import logo from "../../assets/logo/logo-nav.png";
-import { company } from "../../data/site";
+import { company, contact, socials } from "../../data/contact";
 
 const columns = [
   {
@@ -42,15 +42,18 @@ export default function Footer() {
               We turn ideas into smart digital products — from custom software to
               AI that helps your business grow.
             </p>
-            <div className="mt-6 flex gap-2.5">
-              {company.socials.map((s) => (
+            <div className="mt-6 flex flex-wrap gap-2">
+              {socials.map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-white text-slate transition-all hover:-translate-y-0.5 hover:border-brand-300 hover:text-brand-600"
+                  title={s.label}
+                  className="grid h-9 w-9 place-items-center rounded-full border border-line bg-white text-slate transition-all hover:-translate-y-0.5 hover:border-brand-300 hover:bg-brand-50 hover:text-brand-600"
                 >
-                  <span className="text-xs font-bold">{s.label[0]}</span>
+                  <Icon name={s.icon} size={18} />
                 </a>
               ))}
             </div>
@@ -84,26 +87,33 @@ export default function Footer() {
             <ul className="mt-5 flex flex-col gap-3 text-[0.95rem] text-slate">
               <li className="flex items-center gap-3">
                 <Icon name="mail" size={18} className="text-brand-500" />
-                <a href={`mailto:${company.email}`} className="hover:text-brand-700">
-                  {company.email}
+                <a href={`mailto:${contact.email}`} className="hover:text-brand-700">
+                  {contact.email}
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Icon name="phone" size={18} className="text-brand-500" />
-                <a href={`tel:${company.phone}`} className="hover:text-brand-700">
-                  {company.phone}
+                <a href={`tel:${contact.phone.replace(/[^+\d]/g, "")}`} className="hover:text-brand-700">
+                  {contact.phone}
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Icon name="pin" size={18} className="mt-0.5 text-brand-500" />
-                <span>{company.address}</span>
+                <a
+                  href={contact.location.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-brand-700"
+                >
+                  {contact.location.label}
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-slate-200/70 pt-6 text-sm text-slate sm:flex-row">
-          <p>© {new Date().getFullYear()} Rubsal Technologies. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {company.name}. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-brand-700">Privacy</a>
             <a href="#" className="hover:text-brand-700">Terms</a>
