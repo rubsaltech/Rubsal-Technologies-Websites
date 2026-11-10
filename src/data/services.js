@@ -2,14 +2,6 @@
 
 export const services = [
   {
-    slug: "website-app-development",
-    icon: "browser",
-    title: "Website & App Development",
-    short: "Fast, beautiful websites and apps your customers enjoy using.",
-    points: ["Responsive websites", "iOS & Android apps", "E-commerce stores"],
-    group: "software-development",
-  },
-  {
     slug: "custom-software",
     icon: "code",
     title: "Custom Software Solutions",
@@ -40,15 +32,7 @@ export const services = [
     short: "Keep your information safe, organised and easy to reach.",
     points: ["Secure storage", "Fast search", "Cloud migrations"],
     group: "software-development",
-  },
-  {
-    slug: "ai-chatbots",
-    icon: "chat",
-    title: "AI Chatbots & Assistants",
-    short: "Helpful assistants that answer customers around the clock.",
-    points: ["24/7 support bots", "Internal helpdesks", "Voice & chat"],
-    group: "ai-data",
-  },
+  }
 ];
 
 // Deeper content for the two service sub-pages.
